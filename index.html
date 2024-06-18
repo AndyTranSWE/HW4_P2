@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+File: index.html
+GUI Assignment: Using the jQuery Plugin/UI with Your Dynamic Table
+Andy Tran, UMass Lowell Computer Science, andy_tran1@student.uml.edu
+Copyright (c) 2024 by Andy. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by AT on June 17, 2024 at 11:30 PM
+-->
+
+<!-- 
+File Description:
+This file contains the HTML that shows the form and the scrollable table container. It links
+jQuery to use tabs and its validation plugin to check inputs to the form. The user can save
+and 
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Multiplication Table</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/stylesheet.css">
+
+    <!-- Scripts -->
+    <!-- Latest CDN for jQuery validation from https://jqueryvalidation.org/ -->
+    <!-- jQuery theme from https://releases.jquery.com/ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script type="text/JavaScript" src="js/script.js" defer></script>
+</head>
+
+<!-- HTML Body Markup -->
+<body>
+
+    <div class="container">
+        <h1>Dynamic Multiplication Table</h1>
+        <p>Note: The "Table in Progress" is the one that gets updated dynamically.</p>
+        
+        <!-- Form for table has required attribute for error handling. -->
+
+        <form id="tableForm">
+            <!-- Input fields for row and column values with corresponding sliders below. -->
+            <div>
+                <label for="minRowVal">Min Row Value:</label>
+                <input id="minRowVal" name="minRowVal" required>
+                <div id="minRowSlider"></div>
+
+                <label for="maxRowVal">Max Row Value:</label>
+                <input id="maxRowVal" name="maxRowVal" required>
+                <div id="maxRowSlider"></div>
+            </div>
+            <div>
+                <label for="minColVal">Min Column Value:</label>
+                <input id="minColVal" name="minColVal" required>
+                <div id="minColSlider"></div>
+
+                <label for="maxColVal">Max Column Value:</label>
+                <input id="maxColVal" name="maxColVal" required>
+                <div id="maxColSlider"></div>
+            </div>
+            <button type="submit">Save</button>
+        </form>
+
+        <!-- Button to delete  -->
+        <button id="deleteTabs">Delete Selected Tabs</button>
+
+        <!-- Error and table containers. Tabs container initialized with a single tab for parameters. -->
+        <div id="tabs">
+            <ul>
+                <li><a href="#tab-parameters">Table in Progress</a></li>
+            </ul>
+            <div id="tab-parameters">
+                <div id="errorContainer"></div>
+                <div id="tableContainer" class="table-scroll"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

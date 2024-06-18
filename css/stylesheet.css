@@ -1,0 +1,136 @@
+/*
+File: stylesheet.css
+GUI Assignment: Using the jQuery Plugin/UI with Your Dynamic Table
+Andy Tran, UMass Lowell Computer Science, andy_tran1@student.uml.edu
+Copyright (c) 2024 by Andy. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by AT on June 17, 2024 at 11:30 PM
+*/
+
+/*
+File description:
+This file contains the CSS which makes the table more readable and styles the webpage.
+It adjusts the color of jQuery validation messages and ensures the tables are edited
+without distracting effects on the page.
+*/
+
+/*Overall page styling*/
+
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: lightgray;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+/* Heading Section (title of webpage) */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Form Section */
+form {
+    margin-bottom: 30px;
+}
+form div {
+    margin-bottom: 10px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input {
+    margin-right: 20px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Section for jQuery elements */
+
+.error {
+    color: red;
+}
+
+/* jQuery UI Slider */
+.ui-slider {
+    margin: 10px 0;
+}
+
+/* jQuery UI Tab Close Icon */
+.ui-icon-close {
+    cursor: pointer;
+}
+
+#tabs {
+    margin-top: 20px;
+}
+
+
+/* Table Section */
+
+/* 
+Make the table scrollable so that the whole
+thing fits on the page and you don't have to scroll
+up or to the side to see the form
+*/
+.table-scroll {
+    max-width: 100%;
+    max-height: 500px;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* 
+Sticky header row and column.
+-1px offset so I can eliminate the
+"gap" created because the border is
+not sticking to the headers as I
+scroll.
+ */
+th {
+    position: sticky;
+    z-index: 2;
+    background: #C0C0C0;
+}
+thead th {
+    top: -1px;
+    z-index: 3;
+}
+tbody th {
+    z-index: 2;
+    left: -1px;
+}
+thead th:first-child {
+    left: -1px;
+    z-index: 5;
+}
+
+/* Different shades of gray make the table more readable. */
+th, td {
+    border: 1px solid gray;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #C0C0C0;
+}
+td {
+    background-color: white;
+}
